@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio profesional de desarrollador Full Stack - HTML, CSS, JavaScript, Java, Spring Boot, MySQL, PostgreSQL">
+    <title>Portafolio - Santiago Maestre</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--
+    ╔══════════════════════════════════════════════════════════════════╗
+    ║                    INSTRUCCIONES DE USO                          ║
+    ╠══════════════════════════════════════════════════════════════════╣
+    ║                                                                  ║
+    ║  📂 ARCHIVOS DEL PORTAFOLIO:                                     ║
+    ║     - index.html  → Estructura y contenido (ESTE ARCHIVO)        ║
+    ║     - styles.css  → Estilos y diseño                             ║
+    ║     - script.js   → Funcionalidad e interactividad               ║
+    ║                                                                  ║
+    ║  🚀 CÓMO USAR:                                                   ║
+    ║     1. Mantén los 3 archivos en la misma carpeta                 ║
+    ║     2. Edita el contenido en index.html                          ║
+    ║     3. Personaliza colores en styles.css (opcional)              ║
+    ║     4. Haz doble clic en index.html para ver tu portafolio       ║
+    ║                                                                  ║
+    ║  ⚠️ IMPORTANTE:                                                  ║
+    ║     - NO muevas los archivos a carpetas diferentes               ║
+    ║     - NO cambies los nombres de los archivos                     ║
+    ║     - Los archivos deben permanecer juntos para funcionar        ║
+    ║                                                                  ║
+    ║  📝 CÓMO PERSONALIZAR TU PORTAFOLIO:                             ║
+    ║                                                                  ║
+    ║     1. 🖼️ FOTO DE PERFIL:                                        ║
+    ║        - Busca: "🖼️ CAMBIAR FOTO AQUÍ"                           ║
+    ║        - Reemplaza el src con la URL de tu foto                  ║
+    ║                                                                  ║
+    ║     2. 📄 INFORMACIÓN PERSONAL:                                  ║
+    ║        - Busca: "✏️ EDITAR NOMBRE"                               ║
+    ║        - Busca: "✏️ EDITAR DESCRIPCIÓN"                          ║
+    ║                                                                  ║
+    ║     3. 💼 PROYECTOS:                                             ║
+    ║        - Busca: "🚀 EDITAR PROYECTOS"                            ║
+    ║                                                                  ║
+    ║     4. 📧 CONTACTO:                                              ║
+    ║        - Busca: "📧 EDITAR CONTACTO"                             ║
+    ║                                                                  ║
+    ║     5. 🔗 REDES SOCIALES:                                        ║
+    ║        - Busca: "🔗 EDITAR REDES"                                ║
+    ║                                                                  ║
+    ╚══════════════════════════════════════════════════════════════════╝
+    -->
+
+    <!-- ==================== LOADER ==================== -->
+    <div class="loader" id="loader">
+        <div class="loader__content">
+            <div class="loader__spinner"></div>
+            <p class="loader__text">Cargando...</p>
+        </div>
+    </div>
+
+    <!-- ==================== HEADER / NAVEGACIÓN ==================== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <!-- ✏️ EDITAR LOGO/NOMBRE -->
+            <a href="#inicio" class="nav__logo">
+                <span class="nav__logo-icon">&lt;/&gt;</span>
+                <span class="nav__logo-text">DevPortfolio</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#inicio" class="nav__link active">Inicio</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#sobre-mi" class="nav__link">Sobre Mí</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#habilidades" class="nav__link">Habilidades</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#proyectos" class="nav__link">Proyectos</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#experiencia" class="nav__link">Experiencia</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contacto" class="nav__link">Contacto</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="nav__actions">
+                <!-- Botón Modo Oscuro/Claro -->
+                <button class="nav__theme" id="theme-toggle" aria-label="Cambiar tema">
+                    <svg class="nav__theme-icon nav__theme-icon--sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="nav__theme-icon nav__theme-icon--moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Botón Menú Hamburguesa -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                    <span class="nav__toggle-line"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==================== MAIN ==================== -->
+    <main class="main">
+        <!-- ==================== HERO SECTION ==================== -->
+        <section class="hero section" id="inicio">
+            <div class="hero__bg">
+                <div class="hero__shapes">
+                    <div class="hero__shape hero__shape--1"></div>
+                    <div class="hero__shape hero__shape--2"></div>
+                    <div class="hero__shape hero__shape--3"></div>
+                </div>
+            </div>
+
+            <div class="hero__container container">
+                <div class="hero__content">
+                    <div class="hero__data">
+                        <span class="hero__greeting animate-on-scroll">¡Hola! 👋 Soy </span>
+                        
+                        <!-- ✏️ EDITAR NOMBRE: Cambia "Tu Nombre Aquí" por tu nombre real -->
+                        <h1 class="hero__name animate-on-scroll">Kevin Santiago Maestre Castillejo</h1>
+                        
+                        <div class="hero__title-wrapper animate-on-scroll">
+                            <span class="hero__title-static">Soy </span>
+                            <span class="hero__title-typing" id="typing-text"></span>
+                            <span class="hero__cursor">|</span>
+                        </div>
+
+                        <!-- ✏️ EDITAR DESCRIPCIÓN: Personaliza tu descripción -->
+                        <p class="hero__description animate-on-scroll">
+                            Estudiante apasionado de desarrollo de software con <strong>10 meses de experiencia</strong> 
+                            creando soluciones digitales. Especializado en desarrollo Full Stack con tecnologías 
+                            modernas tanto en Frontend como Backend.
+                        </p>
+
+                        <div class="hero__buttons animate-on-scroll">
+                            <!-- ✏️ EDITAR CV: Cambia el href por la ruta de tu CV -->
+                            <a href="#contacto" class="btn btn--primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Descargar CV
+                            </a>
+                            <a href="#contacto" class="btn btn--outline">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                Contáctame
+                            </a>
+                        </div>
+
+                        <!-- 🔗 EDITAR REDES: Cambia los href por tus perfiles reales -->
+                        <div class="hero__social animate-on-scroll">
+                            <a href="https://github.com/SantiagoMaestre1210" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/kevin-santiago-maestre-castillejo-897658348/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="mailto: maestresantiago30@gmail.com" class="hero__social-link" aria-label="Email">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero__image animate-on-scroll">
+                        <div class="hero__image-wrapper">
+                            <div class="hero__image-bg"></div>
+                            <!-- 🖼️ CAMBIAR FOTO AQUÍ: Reemplaza la URL por la de tu foto de perfil -->
+                            <!-- Puedes usar una URL de internet o una ruta local como "./img/perfil.jpg" -->
+                            <img 
+                                src="./Gemini_Generated_Image_9eqbtw9eqbtw9eqb - Editado.png" 
+                                alt="Foto de perfil - Tu Nombre" 
+                                class="hero__img"
+                            >
+                            <div class="hero__image-decoration"></div>
+                        </div>
+                        
+                        <div class="hero__stats">
+                            <div class="hero__stat">
+                                <span class="hero__stat-number" data-count="10">0</span>
+                                <span class="hero__stat-text">Meses de<br>Experiencia</span>
+                            </div>
+                            <div class="hero__stat">
+                                <span class="hero__stat-number" data-count="15">0</span>
+                                <span class="hero__stat-text">Proyectos<br>Completados</span>
+                            </div>
+                            <div class="hero__stat">
+                                <span class="hero__stat-number" data-count="7">0</span>
+                                <span class="hero__stat-text">Tecnologías<br>Dominadas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero__scroll">
+                    <a href="#sobre-mi" class="hero__scroll-link">
+                        <span class="hero__scroll-text">Scroll</span>
+                        <div class="hero__scroll-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M19 12l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SOBRE MÍ ==================== -->
+        <section class="about section" id="sobre-mi">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__subtitle">Conóceme</span>
+                    <h2 class="section__title">Sobre Mí</h2>
+                    <div class="section__line"></div>
+                </div>
+
+                <div class="about__container">
+                    <div class="about__image animate-on-scroll">
+                        <div class="about__image-wrapper">
+                            <!-- 🖼️ CAMBIAR FOTO AQUÍ: Segunda foto (opcional, puede ser la misma) -->
+                            <img 
+                                src="./Gemini_Generated_Image_9eqbtw9eqbtw9eqb - Editado.png" 
+                                alt="Sobre mí - Tu Nombre" 
+                                class="about__img"
+                            >
+                            <div class="about__experience-badge">
+                                <span class="about__experience-number">10</span>
+                                <span class="about__experience-text">meses<br>aprendiendo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about__content">
+                        <!-- ✏️ EDITAR DESCRIPCIÓN SOBRE MÍ -->
+                        <div class="about__info animate-on-scroll">
+                            <h3 class="about__heading">Desarrollador Full Stack en formación</h3>
+                            <p class="about__text">
+                                ¡Hola! Soy un apasionado estudiante de desarrollo de software con <strong>10 meses de experiencia</strong> 
+                                intensiva en el mundo de la programación. Mi viaje comenzó con curiosidad y se ha convertido en una 
+                                verdadera pasión por crear soluciones tecnológicas que impacten positivamente.
+                            </p>
+                            <p class="about__text">
+                                Me especializo en el desarrollo <strong>Full Stack</strong>, dominando tanto el Frontend con 
+                                <strong>HTML, CSS y JavaScript</strong>, como el Backend con <strong>Java, Spring Boot, MySQL y PostgreSQL</strong>. 
+                                Cada día es una oportunidad para aprender algo nuevo y mejorar mis habilidades.
+                            </p>
+                            <p class="about__text">
+                                Mi objetivo es convertirme en un desarrollador profesional que pueda aportar valor a equipos innovadores, 
+                                mientras continúo creciendo y adoptando las mejores prácticas de la industria.
+                            </p>
+                        </div>
+
+                        <div class="about__details animate-on-scroll">
+                            <div class="about__detail">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Disponible para trabajar</span>
+                            </div>
+                            <div class="about__detail">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Aprendizaje continuo</span>
+                            </div>
+                            <div class="about__detail">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Trabajo en equipo</span>
+                            </div>
+                            <div class="about__detail">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <span>Metodologías ágiles</span>
+                            </div>
+                        </div>
+
+                        <div class="about__cta animate-on-scroll">
+                            <a href="#contacto" class="btn btn--primary">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                Hablemos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== HABILIDADES ==================== -->
+        <section class="skills section" id="habilidades">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__subtitle">Mi Stack</span>
+                    <h2 class="section__title">Habilidades Técnicas</h2>
+                    <div class="section__line"></div>
+                </div>
+
+                <div class="skills__container">
+                    <!-- Frontend -->
+                    <div class="skills__category animate-on-scroll">
+                        <div class="skills__category-header">
+                            <div class="skills__category-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
+                            </div>
+                            <h3 class="skills__category-title">Frontend</h3>
+                        </div>
+
+                        <div class="skills__list">
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">HTML5</span>
+                                    <span class="skill__percentage">90%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-progress="90"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">CSS3</span>
+                                    <span class="skill__percentage">85%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-progress="85"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">JavaScript</span>
+                                    <span class="skill__percentage">80%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skills__category animate-on-scroll">
+                        <div class="skills__category-header">
+                            <div class="skills__category-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <h3 class="skills__category-title">Backend</h3>
+                        </div>
+
+                        <div class="skills__list">
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Java</span>
+                                    <span class="skill__percentage">85%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-progress="85"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Spring Boot</span>
+                                    <span class="skill__percentage">75%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-progress="75"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">MySQL</span>
+                                    <span class="skill__percentage">80%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-progress="80"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">PostgreSQL</span>
+                                    <span class="skill__percentage">75%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-progress="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Herramientas -->
+                    <div class="skills__category animate-on-scroll">
+                        <div class="skills__category-header">
+                            <div class="skills__category-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="skills__category-title">Herramientas</h3>
+                        </div>
+
+                        <div class="skills__list">
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Git & GitHub</span>
+                                    <span class="skill__percentage">85%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-progress="85"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">VS Code</span>
+                                    <span class="skill__percentage">90%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-progress="90"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill">
+                                <div class="skill__header">
+                                    <span class="skill__name">Metodologías Ágiles</span>
+                                    <span class="skill__percentage">70%</span>
+                                </div>
+                                <div class="skill__bar">
+                                    <div class="skill__progress" data-progress="70"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Cards -->
+                <div class="skills__cards animate-on-scroll">
+                    <div class="skill-card">
+                        <div class="skill-card__icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h4 class="skill-card__title">Desarrollo Web</h4>
+                        <p class="skill-card__description">Creación de sitios web modernos y responsive</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card__icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="skill-card__title">APIs REST</h4>
+                        <p class="skill-card__description">Diseño y desarrollo de APIs escalables</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card__icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <h4 class="skill-card__title">Bases de Datos</h4>
+                        <p class="skill-card__description">Gestión y optimización de datos</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card__icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="skill-card__title">Clean Code</h4>
+                        <p class="skill-card__description">Código limpio y mantenible</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROYECTOS ==================== -->
+        <!-- 🚀 EDITAR PROYECTOS: Personaliza cada proyecto con tu información -->
+        <section class="projects section" id="proyectos">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__subtitle">Mi Trabajo</span>
+                    <h2 class="section__title">Proyectos Destacados</h2>
+                    <div class="section__line"></div>
+                </div>
+
+                <!-- Filtros de proyectos -->
+                <div class="projects__filters animate-on-scroll">
+                    <button class="projects__filter active" data-filter="all">Todos</button>
+                    <button class="projects__filter" data-filter="frontend">Frontend</button>
+                    <button class="projects__filter" data-filter="backend">Backend</button>
+                    <button class="projects__filter" data-filter="fullstack">Full Stack</button>
+                </div>
+
+                <div class="projects__grid">
+                    <!-- Proyecto 1 -->
+                    <article class="project-card animate-on-scroll" data-category="fullstack">
+                        <div class="project-card__image">
+                            <!-- 🖼️ CAMBIAR IMAGEN PROYECTO: Reemplaza con una captura de tu proyecto -->
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="E-Commerce Platform">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <!-- ✏️ EDITAR ENLACES: Cambia los href por los enlaces reales -->
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver demo">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver código">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Sistema de Autenticación JWT con CORS</h3>
+                            <p class="project-card__description">
+                                Implementación completa de registro y login de usuarios con Spring Boot y JWT, incluyendo rutas protegidas, políticas de CORS y un frontend simple para autenticación segura con control de roles.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">Java</span>
+                                <span class="project-card__tag">Spring Boot</span>
+                                <span class="project-card__tag">MySQL</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 2 -->
+                    <article class="project-card animate-on-scroll" data-category="frontend">
+                        <div class="project-card__image">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop" alt="Dashboard Analytics">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver demo">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver código">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">LifeMovie: Película de Vida Personal</h3>
+                            <p class="project-card__description">
+                                Aplicación web interactiva para crear y gestionar metas personales como una "película de vida", con seguimiento de progreso, notas, insignias motivacionales y exportación de datos. Diseño minimalista y responsivo con modo oscuro.   
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">HTML5</span>
+                                <span class="project-card__tag">CSS3</span>
+                                <span class="project-card__tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 3 -->
+                    <article class="project-card animate-on-scroll" data-category="backend">
+                        <div class="project-card__image">
+                            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop" alt="API REST">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver demo">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver código">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Movie: Visión Galáctica de Proyectos de Vida</h3>
+                            <p class="project-card__description">
+                                Plataforma web temática galáctica para gestión de metas, diarios, hábitos, meditación y tablero de visión. Todo nativo, offline-ready, con chatbot motivacional y logros desbloqueables.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">HTML</span>
+                                <span class="project-card__tag">CSS </span>
+                                <span class="project-card__tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 4 -->
+                    <article class="project-card animate-on-scroll" data-category="fullstack">
+                        <div class="project-card__image">
+                            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop" alt="Task Manager">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver demo">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="#https://github.com/SantiagoMaestre1210 class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver código">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Proyecto AcmeBank</h3>
+                            <p class="project-card__description">
+                                Aplicación de un banco totalmente funcional.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">JavaScript</span>
+                                <span class="project-card__tag">HTML</span>
+                                <span class="project-card__tag">CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 5 -->
+                    <article class="project-card animate-on-scroll" data-category="frontend">
+                        <div class="project-card__image">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop" alt="Landing Page">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver demo">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver código">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Promesas en JavaScript</h3>
+                            <p class="project-card__description">
+                            
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">HTML5</span>
+                                <span class="project-card__tag">CSS3</span>
+                                <span class="project-card__tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Proyecto 6 -->
+                    <article class="project-card animate-on-scroll" data-category="backend">
+                        <div class="project-card__image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Sistema de Inventario">
+                            <div class="project-card__overlay">
+                                <div class="project-card__links">
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver demo">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                            <polyline points="15 3 21 3 21 9"></polyline>
+                                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="https://github.com/SantiagoMaestre1210" class="project-card__link" target="_blank" rel="noopener noreferrer" aria-label="Ver código">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Portafolio Personal</h3>
+                            <p class="project-card__description">
+                                
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">HTML</span>
+                                <span class="project-card__tag">JavaScript</span>
+                                <span class="project-card__tag">CSS</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== EXPERIENCIA / TIMELINE ==================== -->
+        <section class="timeline section" id="experiencia">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__subtitle">Mi Trayectoria</span>
+                    <h2 class="section__title">Experiencia y Formación</h2>
+                    <div class="section__line"></div>
+                </div>
+
+                <div class="timeline__container">
+                    <!-- ✏️ EDITAR EXPERIENCIA: Personaliza cada item del timeline -->
+                    
+                    <!-- Item 1 -->
+                    <div class="timeline__item animate-on-scroll">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__content">
+                            <span class="timeline__date">2025 - Presente</span>
+                            <h3 class="timeline__title">Desarrollo Full Stack</h3>
+                            <p class="timeline__subtitle">Estudiante Autodidacta</p>
+                            <p class="timeline__description">
+                                Aprendizaje intensivo de tecnologías Full Stack, incluyendo Java, 
+                                Spring Boot, bases de datos SQL y desarrollo frontend con HTML, CSS y JavaScript.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="timeline__tag">Java</span>
+                                <span class="timeline__tag">Spring Boot</span>
+                                <span class="timeline__tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="timeline__item animate-on-scroll">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__content">
+                            <span class="timeline__date">2025</span>
+                            <h3 class="timeline__title">Proyectos Personales</h3>
+                            <p class="timeline__subtitle">Desarrollo Práctico</p>
+                            <p class="timeline__description">
+                                Desarrollo de múltiples proyectos personales aplicando conocimientos 
+                                de frontend y backend, implementando APIs REST y bases de datos.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="timeline__tag">MySQL</span>
+                                <span class="timeline__tag">PostgreSQL</span>
+                                <span class="timeline__tag">Git</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="timeline__item animate-on-scroll">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__content">
+                            <span class="timeline__date">2025</span>
+                            <h3 class="timeline__title">Fundamentos de Programación</h3>
+                            <p class="timeline__subtitle">Certificación Online</p>
+                            <p class="timeline__description">
+                                Completé cursos fundamentales de lógica de programación, 
+                                algoritmos y estructuras de datos.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="timeline__tag">Algoritmos</span>
+                                <span class="timeline__tag">Lógica</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="timeline__item animate-on-scroll">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__content">
+                            <span class="timeline__date">2025</span>
+                            <h3 class="timeline__title">Inicio del Viaje</h3>
+                            <p class="timeline__subtitle">Descubrimiento</p>
+                            <p class="timeline__description">
+                                Descubrí mi pasión por la programación y comencé a explorar 
+                                el mundo del desarrollo de software.
+                            </p>
+                            <div class="timeline__tags">
+                                <span class="timeline__tag">HTML</span>
+                                <span class="timeline__tag">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACTO ==================== -->
+        <!-- 📧 EDITAR CONTACTO: Personaliza tu información de contacto -->
+        <section class="contact section" id="contacto">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <span class="section__subtitle">Hablemos</span>
+                    <h2 class="section__title">Contacto</h2>
+                    <div class="section__line"></div>
+                </div>
+
+                <div class="contact__container">
+                    <div class="contact__info animate-on-scroll">
+                        <h3 class="contact__title">¡Trabajemos juntos!</h3>
+                        <p class="contact__text">
+                            Estoy disponible para proyectos freelance, colaboraciones y 
+                            oportunidades de empleo. No dudes en contactarme.
+                        </p>
+
+                        <div class="contact__details">
+                            <!-- ✏️ EDITAR EMAIL -->
+                            <div class="contact__detail">
+                                <div class="contact__detail-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact__detail-content">
+                                    <span class="contact__detail-label">Email</span>
+                                    <a href="mailto:tu@email.com" class="contact__detail-value">maestresantiago30@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <!-- ✏️ EDITAR TELÉFONO -->
+                            <div class="contact__detail">
+                                <div class="contact__detail-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div class="contact__detail-content">
+                                    <span class="contact__detail-label">Teléfono</span>
+                                    <a href="tel:+1234567890" class="contact__detail-value">+57 301 6972855</a>
+                                </div>
+                            </div>
+
+                            <!-- ✏️ EDITAR UBICACIÓN -->
+                            <div class="contact__detail">
+                                <div class="contact__detail-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="contact__detail-content">
+                                    <span class="contact__detail-label">Ubicación</span>
+                                    <span class="contact__detail-value">Cucúta, Colombia</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 🔗 EDITAR REDES SOCIALES -->
+                        <div class="contact__social">
+                            <a href="https://github.com/SantiagoMaestre1210" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="GitHub">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/kevin-santiago-maestre-castillejo-897658348/" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="LinkedIn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="https://twitter.com/SantiM1581" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="Twitter">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact__form animate-on-scroll" id="contact-form">
+                        <div class="form__group">
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                class="form__input" 
+                                placeholder=" "
+                                required
+                            >
+                            <label for="name" class="form__label">Nombre completo</label>
+                            <span class="form__error" id="name-error"></span>
+                        </div>
+
+                        <div class="form__group">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                class="form__input" 
+                                placeholder=" "
+                                required
+                            >
+                            <label for="email" class="form__label">Email</label>
+                            <span class="form__error" id="email-error"></span>
+                        </div>
+
+                        <div class="form__group">
+                            <input 
+                                type="text" 
+                                id="subject" 
+                                name="subject" 
+                                class="form__input" 
+                                placeholder=" "
+                                required
+                            >
+                            <label for="subject" class="form__label">Asunto</label>
+                            <span class="form__error" id="subject-error"></span>
+                        </div>
+
+                        <div class="form__group">
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                class="form__input form__textarea" 
+                                placeholder=" "
+                                rows="5"
+                                required
+                            ></textarea>
+                            <label for="message" class="form__label">Mensaje</label>
+                            <span class="form__error" id="message-error"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--full">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            Enviar Mensaje
+                        </button>
+
+                        <!-- Mensaje de éxito -->
+                        <div class="form__success" id="form-success">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <span>¡Mensaje enviado con éxito! Te responderé pronto.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="#inicio" class="footer__logo">
+                        <span class="footer__logo-icon">&lt;/&gt;</span>
+                        <span class="footer__logo-text">DevPortfolio</span>
+                    </a>
+                    <p class="footer__description">
+                        Desarrollador Full Stack apasionado por crear soluciones 
+                        digitales innovadoras y funcionales.
+                    </p>
+                </div>
+
+                <div class="footer__links">
+                    <h4 class="footer__title">Enlaces Rápidos</h4>
+                    <ul class="footer__list">
+                        <li><a href="#inicio" class="footer__link">Inicio</a></li>
+                        <li><a href="#sobre-mi" class="footer__link">Sobre Mí</a></li>
+                        <li><a href="#habilidades" class="footer__link">Habilidades</a></li>
+                        <li><a href="#proyectos" class="footer__link">Proyectos</a></li>
+                        <li><a href="#contacto" class="footer__link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__contact">
+                    <h4 class="footer__title">Contacto</h4>
+                    <ul class="footer__list">
+                        <li>
+                            <a href="mailto:tu@email.com" class="footer__link">tu@email.com</a>
+                        </li>
+                        <li>
+                            <a href="tel:+1234567890" class="footer__link">+12 345 678 90</a>
+                        </li>
+                        <li>
+                            <span class="footer__link">Tu Ciudad, País</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__social-section">
+                    <h4 class="footer__title">Sígueme</h4>
+                    <div class="footer__social">
+                        <a href="https://github.com/SantiagoMaestre1210" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kevin-santiago-maestre-castillejo-897658348/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://x.com/SantiM1581" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; <span id="current-year">2025</span> DevPortfolio. Todos los derechos reservados.
+                </p>
+                <p class="footer__made">
+                    Hecho con <span class="footer__heart">&#10084;</span> y mucho código
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCROLL TO TOP BUTTON ==================== -->
+    <button class="scroll-top" id="scroll-top" aria-label="Volver arriba">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
